@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="username">Enter Name:</label>
+        <input id="username" type="text"  placeholder="" />
+
+        <br/    >
+        <label>Enter Phone:</label>
+        <input type="number" placeholder="Enter Phone"/>
+       <br/>
+       <label>Enter Password:</label>
+        <input type="password"/>
+
+         <label for="">Male</label>
+        <input type="checkbox" name="gender" >
+
+        <label for="">Female</label>
+        <input type="checkbox"  name="gender"/>
+
+        <br/>
+         <p>Select Gender</p>
+         <!-- <span>Enter Gender</span> -->
+        <label for="">Male</label>
+        <input type="radio" name="g"/>
+        <label for="">Female</label>
+        <input type="radio" name="g"/>
+
+        <br/>
+
+<input type="date" />
+<input type="datetime"/>
+
+<input type="email" name="" id="" required>
+
+<input type="url" name="" id="">
+
+<input type="tel" name="" id="">
+
+<input type="search" name="" id="">
+
+<button>Search</button>
+
+
+
+
+
+
+
+
+<button>Submit btn</button>
+
+<input type="button" value="Submit">
+
+        
+        <!-- <br/>
+        <select></select>
+        <textarea></textarea> -->
+    </form>
+
+
+
+    <input id="password" type="password"/>
+    <button onclick="showPassword()">Show Password</button> 
+    <button onclick="hidePassword()">Hide Password</button>
+
+    <script>
+        var password = document.getElementById("password")
+
+        function showPassword() {
+            password.type="text"
+        }
+
+        function hidePassword() {
+            password.type="password"
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+
+
+
+*{
+    background-color: blueviolet;
+}
+
+h1{
+    background-color:green;
+}
+
+.heading, #heading,h1{
+  background-color: yellow;
+}
+/* 
+#heading {
+    background-color: gray;
+} */

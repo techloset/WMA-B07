@@ -1,0 +1,26 @@
+h1{
+    background-color: red;
+    /* width: 200px; */
+    padding: 50px;
+    margin: 50px;
+    border: 5px solid black;
+
+}
+a {
+
+    background-color: red;
+
+}
+
+.lorem {
+   width:  400px;
+    height:400px;
+    padding: 50px;
+
+    margin: 50px;
+    overflow: scroll; 
+}
+
+div{
+    background-color: yellow;
+}

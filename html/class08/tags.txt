@@ -1,0 +1,121 @@
+HTML (Hypertext Markup Language) is a markup language used for structuring content on the web. Below is a list of some commonly used HTML tags along with brief definitions of their purposes:
+
+<!DOCTYPE html>: Declares the document type and version of HTML being used.
+
+<html>: The root element that wraps all the content on the page.
+
+<head>: Contains meta-information about the HTML document, such as title, character set, linked stylesheets, etc.
+
+<title>: Sets the title of the HTML document, displayed on the browser tab or window.
+
+<body>: Contains the main content of the HTML document.
+
+<h1>, <h2>, ..., <h6>: Heading tags, used to define headings of various levels. <h1> is the highest level and <h6> is the lowest.
+
+<p>: Represents a paragraph of text.
+
+<a>: Creates hyperlinks, allowing you to link to other web pages or resources.
+
+<img>: Embeds images in the document.
+
+<ul>, <ol>, <li>: Used for creating unordered (bulleted) and ordered (numbered) lists.
+
+<div>: A generic container element often used for layout purposes.
+
+<span>: A generic inline container often used for styling purposes.
+
+<br>: Inserts a line break within text.
+
+<hr>: Represents a thematic break or horizontal line.
+
+<strong>: Represents strong importance or emphasis. Renders text in a bold font.
+
+<em>: Represents emphasized text. Renders text in italics.
+
+<input>: Used for creating various types of form elements.
+
+<form>: Wraps form elements and defines a form on the web page.
+
+<textarea>: Defines a multiline text input control within a form.
+
+<select>, <option>: Used for creating dropdown lists.
+
+<table>, <tr>, <th>, <td>: Tags for creating tables and their elements.
+
+<iframe>: Embeds an inline frame, allowing the inclusion of external content.
+
+<audio>, <video>: Embeds audio and video content.
+
+<meta>: Provides meta-information about the HTML document, such as character set and viewport settings.
+
+<link>: Links external resources such as stylesheets or icons.
+
+<style>: Contains CSS code for styling the HTML document.
+
+<script>: Embeds or links to JavaScript code.
+
+<abbr>: Represents an abbreviation or acronym, optionally providing a full description.
+
+<address>: Defines contact information for the author or owner of a document.
+
+<b>: Represents bold text (older and less semantic than <strong>).
+
+<blockquote>: Defines a block of text that is a quotation from another source.
+
+<cite>: Represents the title of a creative work (e.g., a book, movie, song) within text.
+
+<code>: Represents a single line of code.
+
+<del>: Represents deleted text within the document.
+
+<ins>: Represents inserted text within the document.
+
+<dfn>: Represents the defining instance of a term.
+
+<kbd>: Represents user input, typically keyboard input.
+
+<mark>: Represents text highlighted for reference or notation.
+
+<pre>: Represents preformatted text, preserving both spaces and line breaks.
+
+<q>: Represents a short inline quotation.
+
+<samp>: Represents sample output from a program or computer process.
+
+<small>: Represents smaller text, typically used for disclaimers or copyright information.
+
+<sub>: Represents subscript text.
+
+<sup>: Represents superscript text.
+
+<time>: Represents a specific period in time or a range of time.
+
+<var>: Represents the name of a variable in programming or mathematics.
+
+<article>: Represents a self-contained piece of content that could be distributed and reused independently.
+
+<aside>: Represents content that is tangentially related to the content around it.
+
+<figure>: Represents any content that is referenced from the main content, such as images, charts, or code snippets.
+
+<figcaption>: Represents a caption or legend for a <figure> element.
+
+<footer>: Represents a footer for a section or a page.
+
+<header>: Represents a header for a section or a page.
+
+<main>: Represents the main content of the <body> element.
+
+<nav>: Represents a navigation menu.
+
+<section>: Represents a section of content with a heading.
+
+<summary>: Represents a summary, caption, or legend for a <details> element.
+
+<details>: Represents a disclosure widget from which the user can obtain additional information or controls.
+
+<dialog>: Represents a dialog box or window.
+
+<figcaption>: Represents a caption or legend for a <figure> element.
+
+<mark>: Represents text highlighted for reference or notation.

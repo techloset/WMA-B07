@@ -1,0 +1,16 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
+@font-face {
+    font-family: 'abc';
+    src: url('./Inter-ExtraBold.ttf');
+} */
+.pera{
+    color:red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: lighter;
+    text-align:center;
+    background-color: aqua;
+
+}

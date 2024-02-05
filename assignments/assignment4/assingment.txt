@@ -1,0 +1,16 @@
+Assignment#04
+Dear Students.
+Web and Mobile Application Development, Batch-07
+Requirements:
+create a portfolio website that's include
+1- contact forms
+2- intro video 
+3- iframe of youtube video
+4- summary
+5- portfolio detail in a audio file 
+6- personal information
+
+Deadline: 20-01-2024
+Submit: https://forms.gle/rHNvqw5wyidFBCgx7
+Regards
+Naveed Sarwar

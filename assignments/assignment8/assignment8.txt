@@ -1,0 +1,12 @@
+Assignment#08
+Dear Students
+Web and Mobile Application Development, Batch-07
+Requirements:
+1- Please create the exactly same notion page from figma file
+2- Please deploy into surge, and create online link
+3- Submit the assignment at link below
+4- use the assets from figma file link:https://www.figma.com/file/JICu8XscldvGab5v2l7MLW/f2d---Stripe?type=design&node-id=1-2&mode=design&t=tkEhc7yhuqZso2GW-0
+Deadline: 30/03/2024! 
+Submit: https://forms.gle/cJmRVuWwTs2RGFPd7
+Regards
+Naveed Sarwar

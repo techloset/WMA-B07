@@ -1,0 +1,35 @@
+.heading{
+  font-size: 100px;
+  margin-left: 100px;
+  background-color: aqua;
+}
+.heading2 {
+  display: none;
+}
+
+@media screen and (max-width:500px) {
+  .heading{
+    display: none;
+    /* font-size: 20px;
+    margin-left: 20px;
+    background-color: bisque; */
+  }
+ 
+  .heading2 {
+    display: block;
+    background-color: antiquewhite;
+  }
+}
+
+@media screen and (min-width:500px) and (max-width:800px){
+  .heading{
+    font-size: 40px;
+    margin-left: 40px;
+    background-color: yellowgreen;
+  }
+
+}
+
+@media screen and (min-width:1000px) and (max-width:1200px){
+  
+}

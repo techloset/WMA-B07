@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Animation Example</title>
+<style>
+    .animate {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        animation-name: slidein;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: both;
+        animation: slidein 2s ease-in-out infinite alternate 1s both;
+    }
+
+    @keyframes slidein {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(100%);
+        }
+
+        
+    }
+
+    @keyframes slidein {
+        0% {
+            /* transform: translateX(-100%); */
+            opacity: 0;
+            background-color: red;
+        }
+        50% {
+            /* transform: translateX(0); */
+            opacity: 1;
+            background-color: sandybrown;
+        }
+        100% {
+            /* transform: translateX(100%); */
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="animate"></div>
+</body>
+</html>

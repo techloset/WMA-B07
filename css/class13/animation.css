@@ -1,0 +1,44 @@
+.container{
+    background-color: aqua;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(blue, pink);
+    animation-name: abc;
+    animation-timing-function: linear;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    animation: abc 5s linear infinite alternate both;
+  
+
+}
+
+.container:hover{
+    animation-play-state: paused;
+}
+
+@keyframes abc {
+  0% {
+    /* background-color: yellow; */
+    transform: rotate(10deg);
+  }
+  25%{
+    /* background-color: violet; */
+    transform: rotate(50deg);
+  }
+  50%{
+    /* background-color: green; */
+    transform: rotate(100deg);
+  }
+  75%{
+    /* background-color: tomato; */
+    transform: rotate(130deg);
+    
+  }
+  100%{
+    /* background-color: blue; */
+    transform: rotate(180deg);
+  }
+}

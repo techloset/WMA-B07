@@ -1,0 +1,57 @@
+#parent {
+    /* background-color: yellowgreen; */
+    /* height: 400px; */
+    margin: 0px 40px;
+    display: flex;
+    gap:20px;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+    /* align-items:center; */
+}
+
+#build{
+    display: flex;
+    background-color: aqua;
+    flex-direction: row;
+}
+
+
+#box1{
+    background-color: red;
+    width: 20%;
+    height: 100px;
+    /* height: 200px; */
+    /* float:left; */
+}
+
+#box2{
+    background-color: yellow;
+    width: 20%;
+    height: 100px;
+   
+    /* height: 200px; */
+    /* float: left; */
+}
+
+#box3{
+    background-color: rebeccapurple;
+    width: 20%;
+    height: 100px;
+    /* float: left; */
+}
+#boxleft{
+    background-color: aqua;
+    width: 50%;
+    float: left;
+}
+
+#boxright{
+    background-color: black;
+    width: 50%;
+    float: right;
+}
+
+p{
+    padding: 20px;
+}

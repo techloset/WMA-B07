@@ -1,0 +1,39 @@
+#box1{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+
+
+
+
+
+
+    /* position: sticky; */
+    /* position: fixed; */
+    /* position: absolute; */
+    /* top: 50px; */
+    /* z-index:124; */
+    /* right: 50px;
+    bottom: 20px; */
+
+}
+#box2{
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    
+
+
+    /* position: relative;
+    right:50px;
+    bottom:50px; */
+
+
+
+    /* z-index: 32424;
+    top:150px;
+    left:400px;
+    position: absolute; */
+}
+
+

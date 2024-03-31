@@ -1,0 +1,105 @@
+button {
+    background-color: blue;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 5s ease; /* Animate background-color over 0.5s with an ease timing function */
+  }
+  
+  button:hover {
+    background-color: green; /* New background color on hover */
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    transition: all 0.3s ease;
+  }
+  
+  .box:hover {
+    transform: scale(5.2);
+  }
+
+  .fade {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  
+  .fade:hover {
+    opacity: 0.5;
+  }
+
+  .slide {
+    margin-left: 0;
+    transition: margin-left 0.5s linear;
+  }
+  
+  .slide:hover {
+    margin-left: 100px;
+  }
+
+  .rotate {
+    width: 50px;
+    background-color: aqua;
+    transition: transform 0.5s ease;
+  }
+  
+  .rotate:hover {
+    transform: rotate(360deg);
+  }
+
+  .pulse {
+    animation: pulse 1s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+
+  .rotated {
+    background-color: aqua;
+    width: 50px;
+    transform: translate(50px, 20px);
+    transform: scale(1.5);
+    transform: skew(30deg, 20deg);
+    transform: translate(50px, 50px) rotate(45deg) scale(1.5);
+
+    /* transform: rotate(180deg); */
+  }
+
+.slides {
+    /* background-color: salmon; */
+    animation: slides 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes slides {
+    0% { background-color: red }
+    25% { background-color: red; width: 20%; }
+    50% { background-color: red; width: 80%;  }
+    100% { background-color: green }
+}
+
+
+
+
+
+.rotates{
+  background-color: aqua;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  font-size: 30px;
+  transition: transform 1s linear;
+}
+
+.rotates:hover{
+  transform: scale(1.5);
+}

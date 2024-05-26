@@ -1,0 +1,27 @@
+Functions
+1. Write a js program to find cube of any number using function.
+2. Write a js program to find diameter, circumference and area of circle using functions.
+3. Write a js program to find maximum and minimum between two numbers using functions.
+4. Write a js program to check whether a number is even or odd using functions.
+5. Write a js program to check whether a number is prime, Armstrong or perfect number using functions.
+6. Write a js program to find all prime numbers between given interval using functions.
+7. Write a js program to print all strong numbers between given interval using functions.
+8. Write a js program to print all Armstrong numbers between given interval using functions.
+9. Write a js program to print all perfect numbers between given interval using functions.
+10. Write a js program to find power of any number using function.
+11. Write a js program to print all natural numbers between 1 to n using function.
+12. Write a js program to print all even or odd numbers in given range using function.
+13. Write a js program to find sum of all natural numbers between 1 to n using function.
+14. Write a js program to find sum of all even or odd numbers in given range using function.
+15. Write a js program to find reverse of any number using function.
+16. Write a js program to check whether a number is palindrome or not using function.
+17. Write a js program to find sum of digits of a given number using function.
+18. Write a js program to find factorial of any number using function.
+19. Write a js program to generate nth Fibonacci term using function.
+20. Write a js program to find GCD (HCF) of two numbers using function.
+21. Write a js program to find LCM of two numbers using function.
+22. Write a js program to display all array elements using function.
+23. Write a js program to find sum of elements of array using function.
+24. Write a js program to find maximum and minimum elements in array using function.
+
+Submit: https://forms.gle/WF1QTfFJwXyeVYz99

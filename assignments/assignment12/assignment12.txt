@@ -1,4 +1,4 @@
-
+Assignment 12
 Loop Exersise: 
 1. Write a js program to print all natural numbers from 1 to n. - using while loop
 2. Write a js program to print all natural numbers in reverse (from n to 1). - using while loop
@@ -45,4 +45,4 @@ For next 100 units Rs. 0.75/unit
 For next 150 units Rs. 1.20/unit
 For unit above 250 Rs. 1.50/unit
 
-Submit: https://forms.gle/STsmr4vS2A6rGrxU7
+Submit: https://forms.gle/1U1JRYvJ7nYeC7t67

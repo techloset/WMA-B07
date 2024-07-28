@@ -1,0 +1,17 @@
+{  
+    "date": "2018-01-01",
+    "countries": [
+        {
+            "name": "Afghanistan",
+            "code": "AF"
+        },
+        {
+            "name": "Albania",
+            "code": "AL"
+        },
+        {
+            "name": "Algeria",
+            "code": "DZ"
+        }
+    ]
+}

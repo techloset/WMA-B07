@@ -1,0 +1,5 @@
+Review code
+Prepare meeting notes
+[Done] Learn TypeScript
+Write Code
+Submit Assignment

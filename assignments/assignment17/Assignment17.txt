@@ -1,0 +1,6 @@
+Assignment17: 
+Convert Provided HTML code into Reactjs with proper components and props feature
+
+Submission: https://forms.gle/thmyTQxgBor5YrnE6
+
+Deadline: 8 Sep 2024

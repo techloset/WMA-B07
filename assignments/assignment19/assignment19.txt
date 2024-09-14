@@ -1,0 +1,2 @@
+- Build Student app in reactjs using yup validation and add, delete, update operations 
+Submit: https://forms.gle/UZomFwDQfRhWBX1c8

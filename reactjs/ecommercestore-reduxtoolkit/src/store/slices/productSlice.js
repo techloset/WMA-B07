@@ -11,6 +11,32 @@ export const fetchProducts = createAsyncThunk(
     }
 );
 
+export const deleteProductApiAction = createAsyncThunk(
+    "product/deleteProduct",
+    async (id) => {
+        const response = await fetch(`https://fakestoreapi.com/products/${id}`, {
+            method: "DELETE",
+        });
+        const data = await response.json();
+        console.log("data in deleteProduct action", data);
+        return data;
+    });
+
+export const addProduct = createAsyncThunk(
+    "product/addProduct",
+    async (product) => {
+        const response = await fetch("https://fakestoreapi.com/products", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(product),
+        });
+        const data = await response.json();
+        console.log("data in addProduct action", data);
+        return data;
+    });
+
 const productSlice = createSlice({
     name: "product",
     initialState: {
@@ -18,24 +44,19 @@ const productSlice = createSlice({
     },
     reducers: {
         deleteProduct: (state, action) => {
-            state.products = state.products.filter(
-                product => product.id !== action.payload
-            );
+
+            let id = action.payload;
+            console.log("id in deleteProduct", id);
+            let filteredProducts = state.products.filter(product => product.id !== id);
+            state.products = filteredProducts;
+
         },
-        updateProduct: (state, action) => {
-            const { id, title, price, description, category, image } = action.payload;
-            const existingProduct = state.products.find(product => product.id === id);
-            if (existingProduct) {
-                existingProduct.title = title;
-                existingProduct.price = price;
-                existingProduct.description = description;
-                existingProduct.category = category;
-                existingProduct.image = image;
-            }
-        },
-        setProducts: (state, action) => {
-            state.products = action.payload;
-        },
+
+        // addProduct: (state, action) => {
+        //     console.log("action in addProduct", action.payload);
+        //     state.products = [action.payload,...state.products];
+        // }
+       
     },
     extraReducers: builder => {
            
@@ -44,11 +65,24 @@ const productSlice = createSlice({
                 
                 state.products = action.payload;
             },)
+
+            builder.addCase(deleteProductApiAction.fulfilled, (state, action) => {
+                console.log("delete product in reducer", action.payload);
+                let id = action.payload.id;
+                let filteredProducts = state.products.filter(product => product.id !== id);
+                state.products = filteredProducts;
+            },)
+
+            builder.addCase(addProduct.fulfilled, (state, action) => {
+                console.log("add product in reducer", action.payload);
+                state.products = [action.payload, ...state.products];
+            },)
+            
           }
         
 });
 
 
-export const { setProducts } = productSlice.actions;
+export const { deleteProduct } = productSlice.actions;
 export default productSlice.reducer;
 

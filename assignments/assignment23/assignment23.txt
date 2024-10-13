@@ -1,0 +1,6 @@
+- Facebook type social media platform features including:
+   - User can login
+   - User can signup
+   - User can create a post
+   - Everyone can see newly created posts
+Submit: https://forms.gle/N63YqkjEWLMvQosd9

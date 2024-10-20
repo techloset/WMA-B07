@@ -27,6 +27,7 @@ const dispatch = useDispatch()
     // dispatch
     dispatch(updateDocId(id))
   }
+  
   return (
     <div>
       <h1>Feed Listing</h1>
@@ -35,7 +36,8 @@ const dispatch = useDispatch()
         feed?.map((post) => {
           return (
             <div key={post?.id}>
-              <h3>{post?.title}</h3>
+              <img style={{width:100}} src={post?.imageURL}/>
+              <h3>{post?.title} - {new Date(post?.createAt.toDate()).toLocaleDateString()}</h3>
               <p>{post?.description}</p>
               <button onClick={()=>handleDelete(post.id)}>delete</button>
               <button onClick={()=>handleEdit(post.id)}>edit</button>

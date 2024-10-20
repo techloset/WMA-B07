@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { collection, addDoc, getDocs, onSnapshot, query, where, orderBy, limit, doc, deleteDoc, setDoc, updateDoc } from "firebase/firestore";
+import { ref,uploadBytes,getDownloadURL } from "firebase/storage";
+import { storage } from "../../config/firebase";
 import { db } from "../../config/firebase";
 
 
@@ -76,11 +78,31 @@ export const createPost = createAsyncThunk(
     async (post) => {
 
         try {
-            const collectionRef = collection(db, "posts")
-            const response = await addDoc(collectionRef, post)
-            console.log("response after firebase store", response);
+            post.setLoading(true)
+            const file = post.file
+            console.log("file", file);
+            
+            const fileRef = ref(storage, 'images/' + parseInt(Math.random() * 23423425312) + file.name);
+            const metadata = {
+                contentType: file.type,
+              };
+            await uploadBytes(fileRef, file, metadata)
+            const url = await getDownloadURL(fileRef)
+            console.log("url",url);
+            
+            let updatedPost  = {
+                title: post.title,
+                description: post.description,
+                createAt: new Date(),
+                imageURL: url,
+            }
 
+            const collectionRef = collection(db, "posts")
+            const response = await addDoc(collectionRef, updatedPost)
+            console.log("response after firebase store", response);
+            post.setLoading(false)
         } catch (error) {
+            
             console.log("error", error);
 
         }

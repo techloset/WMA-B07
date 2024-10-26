@@ -14,6 +14,7 @@ export default function CreatePost() {
     const [file, setFile] = useState(null)
     const [loading, setLoading] = useState(false)
 
+    const user = useSelector(store => store.authSlice.user)
     const post = useSelector(store => store.feedSlice.updatePost)
 
     const dispatch = useDispatch()
@@ -34,7 +35,9 @@ export default function CreatePost() {
     const createPostHandler = () => {
         console.log("Title: ", title);
         console.log("Description: ", description)
+        console.log("uid: ", user.uid)
         let postData = {
+            uid: user.uid,
             title,
             description,
             imageURL,

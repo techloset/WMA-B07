@@ -1,5 +1,5 @@
 // authSlice
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut, onAuthStateChanged} from "firebase/auth";
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { auth, db } from "../../config/firebase";
@@ -8,14 +8,25 @@ import { addDoc ,doc, collection, getDoc, setDoc} from "firebase/firestore";
 
 export const getCurrentUser = createAsyncThunk(
     "auth/currentUser",
-    async ()=>{
+    async (setLoading, store)=>{
         try {
-            const user = auth.currentUser;
-            if (user) {
-                return user
-            }
-         
+            setLoading(true)
+            onAuthStateChanged(auth,async(user) => {
+                if (user) {
+                  const uid = user.uid;
+                  const docSnap = await getDoc(doc(db, "users",uid))
+                  const dbUser = docSnap?.data()
+                  store.dispatch(setUser(dbUser))
+                  console.log("dbUser",dbUser);
+                  setLoading(false)
+                } else{
+                    setLoading(false)
+                }
+              });
+              return 
         } catch (error) {
+            setLoading(false)
+            console.log(error);
             
         }
          
@@ -95,6 +106,8 @@ const authSlice = createSlice({
     initialState,
     reducers: {
         setUser: (state, action) => {
+            console.log("reducer in setuser", action.payload);
+            
             state.user = action.payload
         }
     },
@@ -115,7 +128,7 @@ extraReducers:(builder)=>{
     })
 
     builder.addCase(getCurrentUser.fulfilled, (state,action)=>{
-        console.log("action in login", action.payload);
+        console.log("reducer case in login", action.payload);
         state.user = action.payload
     })
 }

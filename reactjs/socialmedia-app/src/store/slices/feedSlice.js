@@ -91,6 +91,7 @@ export const createPost = createAsyncThunk(
             console.log("url",url);
             
             let updatedPost  = {
+                uid:post.uid,
                 title: post.title,
                 description: post.description,
                 createAt: new Date(),
@@ -101,8 +102,9 @@ export const createPost = createAsyncThunk(
             const response = await addDoc(collectionRef, updatedPost)
             console.log("response after firebase store", response);
             post.setLoading(false)
+            return {...updatedPost,id:response.id}
         } catch (error) {
-            
+            post.setLoading(false)
             console.log("error", error);
 
         }

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getPosts,deletePost,updateDocId } from '../../store/slices/feedSlice';
 
 export default function FeedListing() {
-  
+const user = useSelector(store => store.authSlice.user)
 const feed = useSelector(store => store.feedSlice.feed)
 const dispatch = useDispatch()
 
@@ -17,9 +17,14 @@ const dispatch = useDispatch()
     dispatch(getPosts())
   }
 
-  const handleDelete = (id) => {
+  const handleDelete = (id,uid) => {
     console.log("Delete clicked", id);
     // dispatch
+     if (user.uid != uid) {
+      alert("You can't delete this post")
+      return
+      
+     }
     dispatch(deletePost(id))
   }
   const handleEdit = (id) => {
@@ -27,6 +32,7 @@ const dispatch = useDispatch()
     // dispatch
     dispatch(updateDocId(id))
   }
+  console.log("feed",feed);
   
   return (
     <div>
@@ -37,9 +43,9 @@ const dispatch = useDispatch()
           return (
             <div key={post?.id}>
               <img style={{width:100}} src={post?.imageURL}/>
-              <h3>{post?.title} - {new Date(post?.createAt.toDate()).toLocaleDateString()}</h3>
+              <h3>{post?.title} - { post?.createAt?.seconds ? new Date(post?.createAt?.toDate()).toLocaleDateString() : new Date(post?.createAt).toLocaleDateString()} - {post.uid}</h3>
               <p>{post?.description}</p>
-              <button onClick={()=>handleDelete(post.id)}>delete</button>
+              {post.uid != user.uid ? "" :<button onClick={()=>handleDelete(post.id, post.uid)}>delete</button>}
               <button onClick={()=>handleEdit(post.id)}>edit</button>
               <hr/>
             </div>
@@ -49,3 +55,5 @@ const dispatch = useDispatch()
     </div>
   )
 }
+
+

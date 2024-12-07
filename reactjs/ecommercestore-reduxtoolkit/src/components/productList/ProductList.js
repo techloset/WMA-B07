@@ -8,9 +8,11 @@ export default function ProductList() {
     console.log("prdocuts in comp", products)
 
     useEffect(() => {
-        if(products.length === 0){
+        // if(products.length === 0){
+        console.log("fetching products");
+        
         dispatch(fetchProducts())
-        }
+        // }
     }, [])
     
     const onClickDeleteProduct = (id)=>{

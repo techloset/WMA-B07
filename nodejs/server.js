@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 
 const connectDB = async () => {
     try {
-        await mongoose.connect("mongodb+srv://smtp:xUBDY06s4aTaGaOA@cluster0.umlgkew.mongodb.net/todoapp?retryWrites=true&w=majority&appName=Cluster0", { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect("", { useNewUrlParser: true, useUnifiedTopology: true });
         console.log('MongoDB Connected…')
     } catch (err) {
         console.error("error happens:",err);

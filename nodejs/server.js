@@ -1,9 +1,149 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose');
 var cors = require('cors')
 const app = express()
 const port = 8000
 
 app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+
+// function for mongodb connection using mongoose
+
+const connectDB = async () => {
+    try {
+        await mongoose.connect("mongodb+srv://smtp:xUBDY06s4aTaGaOA@cluster0.umlgkew.mongodb.net/todoapp?retryWrites=true&w=majority&appName=Cluster0", { useNewUrlParser: true, useUnifiedTopology: true });
+        console.log('MongoDB Connected…')
+    } catch (err) {
+        console.error("error happens:",err);
+    }
+}
+
+connectDB();
+
+const TodosSchema = new mongoose.Schema({
+    id:{
+        type: Number,
+        required: true
+    },
+    title: {
+        type: String,
+        required: true
+    },
+    description: String,
+    createdAt:{
+        type: Date, default: Date.now
+    }
+  });
+const Todos = mongoose.model('Todos', TodosSchema);
+
+app.get('/', (req, res) => {
+    res.send('Server is running!')
+})
+
+app.get('/todos', async (req, res) => {
+    try {
+         
+        let todos = await Todos.find();
+      
+        res.json({
+            data:todos,
+            status: "success"
+        })
+        
+    } catch (error) {
+        res.status(501).json({
+            data:[],
+            status: "error",
+            error: error
+        })
+        
+    }
+   
+})
+app.get('/todos/:id', async(req, res) => {
+    try {
+        const id = req.params?.id;
+        // let todo = await Todos.find({id:id});
+        let todo = await Todos.findOne({id:id});
+        // let todo = await Todos.findById(id);
+        res.json({
+            data:todo,
+            status: "success"
+        })
+        
+    } catch (error) {
+        res.status(501).json({
+            data:[],
+            status: "error",
+            error: error
+        })
+        
+    }
+})
+app.post('/todos/create', async (req, res) => {
+      try {
+
+       let newTodo = new Todos({
+            id: req.body?.id,
+            title: req.body?.title,
+            description: req.body?.description
+        })
+       let output = await newTodo.save();
+        res.json({
+            data:output,
+            status: "success"
+        })
+        
+      } catch (error) {
+        res.status(501).json({
+            data:[],
+            status: "error",
+            error: error
+        })
+      }
+   
+
+
+})
+app.put('/todos/update/:id', (req, res) => {
+    try {
+        let id = req.params?.id;
+        res.json({
+            data:[],
+            status: "success"
+        })
+        
+    } catch (error) {
+        res.status(501).json({
+            data:[],
+            status: "error",
+            error: error
+        })
+    }
+})
+app.delete('/todos/delete/:id', async (req, res) => {
+    try {
+        let id = req.params?.id;
+        let todo = await Todos.findOneAndDelete({id:id});
+        res.json({
+            data:todo,
+            status: "success"
+        })
+        
+    } catch (error) {
+        res.json({
+            data:[],
+            status: "error",
+            error: error
+        })
+    }
+})
+
+
+
 
 app.get('/products', (req, res) => {
     // id:1,
@@ -34,6 +174,34 @@ app.get('/xyz', (req, res) => {
     ]
     res.json(users)
 });
+
+
+
+
+app.get('/v1/users/:id/:doc',(req, res)=>{
+    try {
+     
+        console.log('req.headers recieved', req.headers);
+        
+    
+        let data = [{
+            id: req.query?.id,
+            name:req.query?.userName,
+            age:25
+    }]
+        res.status(200).json({
+            data:data,
+            status: "success"
+        })
+    } catch (error) {
+        res.status(501).json({
+            data:[],
+            status: "error",
+            error: error
+        })
+    }
+    
+})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

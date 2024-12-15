@@ -5,12 +5,13 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const todoRoutes = require('./routes/todoRoutes');
+const productRouter = require('./routes/productRoutes');
 
 
 
 // app creation
 const app = express()
-const port = 8000
+const port = process.env.PORT || 8000;
 
 
 // middleware
@@ -30,6 +31,7 @@ app.get('/', (req, res) => {
 // Routes
 app.use("/auth",authRoutes);
 app.use("/todos",todoRoutes);
+app.use("/products",productRouter);
 
 
 app.listen(port, () => {

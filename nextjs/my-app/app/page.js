@@ -1,15 +1,26 @@
-import Image from "next/image";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
-import Link from "next/link";
+const fetchTodos = async () => {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/todos`,{cache: "no-store"})
+  const data = await response.json()
+  console.log("data", data);
 
-export default function Home() {
+  return data
+
+}
+export default async function Home() {
+  const result = await fetchTodos()
+  console.log("data abc", result);
+  
   return (
     <div>
-      <Link href="/contact" >Contact </Link>
-      <Header/>
-      <h1>Hello Nextjs</h1>
-      <Footer/>
+      <h1>Todos</h1>
+      <ul>
+        {result?.data?.map(todo => {
+          return (
+            <>
+              <li key={todo.id}> {todo.id} - {todo.title} - {todo.description}</li>
+            </>)
+        })}
+      </ul>
     </div>
   );
 }
